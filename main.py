@@ -40,9 +40,17 @@ def commands(message):
                 bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)')
                 bot.register_next_step_handler(message,get_process)
 
+                
+        elif message.text == '/kill':
+                bot.send_message(message.chat.id,'Какой процесс хотите убить(steam.exe)')
+                bot.register_next_step_handler(message,get_kill)                   
+                
+                
         elif message.text == '/reboot':
                 os.system('shutdown -r -t 0')
 
+                
+                
 def get_url(message):
         global url
         url = message.text
@@ -60,11 +68,23 @@ def get_process(message):
                 bot.send_message(message.chat.id,'Включил данный процесс\n' + process)
         except:
                  bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!')
+
+                        
+                        
+                        
+                        
+def get_kill(message):
+        global kill
+        kill = message.text
+        try:
+                os.system("taskkill /im " + kill)
+                bot.send_message(message.chat.id,'Данный процесс убит\n' + kill)
+        except:
+                bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!')
+
                 
-               
-        
-        
-        
+                        
+         
 try:
         bot.polling(none_stop=True, interval=0)
 except:
