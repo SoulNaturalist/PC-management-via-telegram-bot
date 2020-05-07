@@ -8,14 +8,6 @@ mytoken = 'telegram token'
 
 bot = telebot.TeleBot(mytoken)
 
-
-mainkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
-
-mainkeyboard.row('/off','/open','/screen')
-
-
-
-
 @bot.message_handler(content_types=['text'])
 def commands(message):
         if message.text == '/off':
