@@ -9,3 +9,5 @@ commands ⚡️
 /screen - сделать скриншот ⚡️
 
 /off - выкл пк ⚡️
+
+/process - включить процесс(пример steam.exe)⚡️
