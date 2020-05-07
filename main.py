@@ -22,12 +22,12 @@ def commands(message):
                 os.system('shutdown -s')
 
 
-        if message.text == '/open':
+        elif message.text == '/open':
                 bot.register_next_step_handler(message,get_url)
                 bot.send_message(message.chat.id,'Отправьте ссылку!')
                 
 
-        if message.text == '/screen':
+        elif message.text == '/screen':
                 try:  
                         os.remove("screenshot.png")
                 except:
@@ -36,7 +36,9 @@ def commands(message):
                         screen = open('screenshot.png', 'rb')
                         bot.send_photo(message.chat.id, screen)
                 
-
+        elif message.text == '/process':
+                bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)')
+                bot.register_next_step_handler(message,get_process)
 
 
 
@@ -47,6 +49,21 @@ def get_url(message):
         bot.send_message(message.chat.id,'Ссылка открыта!')
 
 
+        
+        
+def get_process(message):
+        global process
+        process = message.text
+        try:
+                os.startfile(process)
+                bot.send_message(message.chat.id,'Включил данный процесс\n' + process)
+        except:
+                 bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!')
+                
+               
+        
+        
+        
 try:
         bot.polling(none_stop=True, interval=0)
 except:
