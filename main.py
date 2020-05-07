@@ -40,7 +40,8 @@ def commands(message):
                 bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)')
                 bot.register_next_step_handler(message,get_process)
 
-
+        elif message.text == '/reboot':
+                os.system('shutdown -r -t 0')
 
 def get_url(message):
         global url
