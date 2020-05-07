@@ -15,4 +15,6 @@ commands ⚡️
 /kill - убить процесс(пример telegram.exe)⚡️
 
 /reboot - перезагрузить пк⚡️
+
+/window - тест на гея⚡️
                
