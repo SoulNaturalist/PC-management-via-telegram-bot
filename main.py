@@ -3,7 +3,7 @@ from PIL import Image, ImageGrab
 
 
 
-mytoken = '1176082537:AAGYLDab5uXofMVK61JFQnVvhH4w2mQAlLg'
+mytoken = 'telegram token'
 
 bot = telebot.TeleBot(mytoken)
 
