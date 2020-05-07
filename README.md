@@ -12,5 +12,7 @@ commands ⚡️
 
 /process - включить процесс(пример steam.exe)⚡️
 
+/kill - убить процесс(пример telegram.exe)⚡️
+
 /reboot - перезагрузить пк⚡️
                
