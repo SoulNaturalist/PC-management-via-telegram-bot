@@ -58,7 +58,9 @@ def commands(message):
         elif message.text == '/reboot':
                 os.system('shutdown -r -t 0')
 
-                
+        elif message.text == '/rep':
+                playsound('myfile.mp3')
+                bot.send_message(message.chat.id,'включил file!')              
                 
 def get_url(message):
         global url
