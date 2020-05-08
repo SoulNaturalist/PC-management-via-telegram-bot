@@ -60,9 +60,26 @@ def commands(message):
                 os.system('shutdown -r -t 0')
 
         elif message.text == '/rep':
-                playsound('myfile.mp3')
-                bot.send_message(message.chat.id,'включил file!')              
+                bot.send_message(message.chat.id,'Какой файл вы хотите включить?')
+                bot.register_next_step_handler(message,get_audio)    
+  
+
+
+
+def get_audio(message):
+        global audio
+        audio = message.text
+        try:
+                playsound(audio)
+                bot.send_message(message.chat.id,'Включил данный файл\n ' + audio)
+        except:
+                bot.send_message(message.chat.id,'Не нашел данный файл\n ' + audio)
                 
+                
+
+
+
+
 def get_url(message):
         global url
         url = message.text
