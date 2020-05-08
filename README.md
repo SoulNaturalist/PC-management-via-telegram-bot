@@ -20,3 +20,19 @@ commands ⚡️
 
 /ip - айпи,город,браузер⚡️
                
+Установка⚡️
+
+git clone https://github.com/Saywex89/PC-management-via-telegram-bot
+
+cd PC-management-via-telegram-bot
+
+python3 main.py
+
+
+
+
+
+
+
+
+
