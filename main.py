@@ -84,54 +84,56 @@ def commands(message):
 def get_record(message):
         global record
         record = message.text
-        record = int(record)
-        if record < 60:
-                #запись с микрофона
-                bot.send_message(message.chat.id,'Записываю,подожди')
-                CHUNK = 1024
-                FORMAT = pyaudio.paInt16
-                CHANNELS = 1
-                RATE = 44100
-                RECORD_SECONDS = record
-                WAVE_OUTPUT_FILENAME = "audio.wav"
-                p = pyaudio.PyAudio()
-                stream = p.open(format=FORMAT,
-                                channels=CHANNELS,
-                                rate=RATE,
-                                input=True,
-                                input_device_index=1, 
-                                frames_per_buffer=CHUNK)
-                frames = []
-                for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-                    data = stream.read(CHUNK)
-                    frames.append(data)
-                stream.stop_stream()
-                
-                stream.close()
-                
-                p.terminate()
+        try:
+                record = int(record)
+                if record < 60:
+                        bot.send_message(message.chat.id,'Записываю,подожди')
+                        CHUNK = 1024
+                        FORMAT = pyaudio.paInt16
+                        CHANNELS = 1
+                        RATE = 44100
+                        RECORD_SECONDS = record
+                        WAVE_OUTPUT_FILENAME = "audio.wav"
+                        p = pyaudio.PyAudio()
+                        stream = p.open(format=FORMAT,
+                                        channels=CHANNELS,
+                                        rate=RATE,
+                                        input=True,
+                                        input_device_index=1, 
+                                        frames_per_buffer=CHUNK)
+                        frames = []
+                        for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
+                            data = stream.read(CHUNK)
+                            frames.append(data)
+                        stream.stop_stream()
+                        
+                        stream.close()
+                        
+                        p.terminate()
 
-                wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-                
-                wf.setnchannels(CHANNELS)
-                
-                wf.setsampwidth(p.get_sample_size(FORMAT))
-                
-                wf.setframerate(RATE)
-                
-                wf.writeframes(b''.join(frames))
-                
-                wf.close()
-                #запись с микрофона
+                        wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+                        
+                        wf.setnchannels(CHANNELS)
+                        
+                        wf.setsampwidth(p.get_sample_size(FORMAT))
+                        
+                        wf.setframerate(RATE)
+                        
+                        wf.writeframes(b''.join(frames))
+                        
+                        wf.close()
 
-                audio = open('audio.wav', 'rb')
-                
-                bot.send_audio(message.chat.id, audio)
+                        audio = open('audio.wav', 'rb')
+                        
+                        bot.send_audio(message.chat.id, audio)
 
 
-        else:
-                bot.send_message(message.chat.id,'сказано не больше 60sec!')
+                else:
+                        bot.send_message(message.chat.id,'сказано не больше 60sec!')
                 
+        except:
+                bot.send_message(message.chat.id,'в числовом формате!')
+
         
         
         
