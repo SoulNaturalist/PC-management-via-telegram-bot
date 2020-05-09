@@ -21,7 +21,10 @@ commands ⚡️
 /ip - айпи,город,браузер⚡️
 
 /rep - запустить файл.mp3(файл должен быть скачен)⚡️
-               
+
+/record - запись звуков с микрофона
+
+
 Установка⚡️
 
 git clone https://github.com/Saywex89/PC-management-via-telegram-bot
