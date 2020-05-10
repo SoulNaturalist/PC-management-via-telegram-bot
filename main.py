@@ -9,9 +9,25 @@ mytoken = 'telegram token'
 
 bot = telebot.TeleBot(mytoken)
 
+mainkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
+
+mainkeyboard.row('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴')
+
+
+
+
+
 @bot.message_handler(content_types=['text'])
 def commands(message):
-        if message.text == '/off':
+        
+        
+        
+        
+        if message.text == '/start':
+                bot.send_message(message.chat.id,'Выбери действие',reply_markup=mainkeyboard)
+        
+    
+        elif message.text == '/off':
                 bot.send_message(message.chat.id,'Компьютер будет выключен!')
                 os.system('shutdown -s')
 
