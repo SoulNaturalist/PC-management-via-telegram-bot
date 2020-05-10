@@ -14,6 +14,10 @@ mainkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
 mainkeyboard.row('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴')
 
 
+powerkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
+
+powerkeyboard.row('Назад🗿','Выключить пк⚠️','Перезагрузить пк🖥')
+
 
 
 
@@ -25,9 +29,19 @@ def commands(message):
         
         if message.text == '/start':
                 bot.send_message(message.chat.id,'Выбери действие',reply_markup=mainkeyboard)
+                
+                
+                
+        if message.text == 'Питание🟢':
+                bot.send_message(message.chat.id,'Выбери действие',reply_markup=powerkeyboard)
+                
+                
+        if message.text == 'Назад🗿':
+                bot.send_message(message.chat.id,'Вернул вас назад',reply_markup=mainkeyboard)
+
         
     
-        elif message.text == '/off':
+        elif message.text == '/off' or message.text == 'Выключить пк⚠️':
                 bot.send_message(message.chat.id,'Компьютер будет выключен!')
                 os.system('shutdown -s')
 
@@ -78,7 +92,7 @@ def commands(message):
                 bot.register_next_step_handler(message,get_kill)                   
                 
                 
-        elif message.text == '/reboot':
+        elif message.text == '/reboot' or message.text == 'Перезагрузить пк🖥':
                 os.system('shutdown -r -t 0')
 
         elif message.text == '/rep':
