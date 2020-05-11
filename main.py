@@ -121,13 +121,13 @@ def commands(message):
 
         elif message.text == '/OC' or message.text == '/oc':
                 if platform == "linux" or platform == "linux2":
-                         bot.send_message(message.chat.id,'oc: linux')
+                         bot.send_message(message.chat.id,'oc: linux\nИмя ПК: ' + socket.gethostname())
 
                 elif platform == "darwin":
-                        bot.send_message(message.chat.id,'oc: OS X')
+                        bot.send_message(message.chat.id,'oc: OS X\nИмя ПК: ' + socket.gethostname())
   
                 elif platform == "win32":
-                        bot.send_message(message.chat.id,'oc: Windows')
+                        bot.send_message(message.chat.id,'oc: Windows\nИмя ПК: ' + socket.gethostname())
         
         
 def get_record(message):
