@@ -28,6 +28,8 @@ commands ⚡️
 
 /oc - узнать операционную систему и имя системы⚡️
 
+/bluesreen - Включить синий экран⚡️
+
 Установка⚡️
 
 git clone https://github.com/Saywex89/PC-management-via-telegram-bot
