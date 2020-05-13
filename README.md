@@ -30,10 +30,34 @@ commands ⚡️
 
 Установка⚡️
 
+<h2>Windows</h2>
+
+Запустите файл start.bat(установка всех нужных модулей)
+
+Скачиваем репозиторий
+
+Запускаем
+
+<h2>Linux</h2>
+
 git clone https://github.com/Saywex89/PC-management-via-telegram-bot
 
-cd PC-management-via-telegram-bot
+Необходимые модули
 
+pip3 install pyTelegramBotAPI
+
+pip3 install pyautogui
+
+pip3 install playsound
+
+pip3 install beautifulsoup4
+
+pip3 install Pillow
+
+pip3 install requests
+
+cd PC-management-via-telegram-bot
+<p>------------------------------</p>
 python3 main.py
 
 
