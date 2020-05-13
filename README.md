@@ -42,7 +42,7 @@ commands ⚡️
 
 git clone https://github.com/Saywex89/PC-management-via-telegram-bot
 
-Необходимые модули
+<i>Необходимые модули</i>
 
 pip3 install pyTelegramBotAPI
 
@@ -56,7 +56,7 @@ pip3 install Pillow
 
 pip3 install requests
 
-Запуск
+<i>Запуск</i>
   
 cd PC-management-via-telegram-bot
 
