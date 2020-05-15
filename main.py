@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from playsound import playsound
 from ctypes import *
 from ctypes.wintypes import *
+from pynput import keyboard
 
 
 mytoken = 'telegram token'
