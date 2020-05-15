@@ -4,3 +4,4 @@ pip install playsound
 pip install beautifulsoup4
 pip install Pillow
 pip install requests
+pip install pynput 
