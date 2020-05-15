@@ -10,6 +10,8 @@ commands ⚡️
 
 /off - выкл пк ⚡️
 
+/tasklist - узнать список всёх процессов⚡️
+
 /process - включить процесс(пример steam.exe)⚡️
 
 /kill - убить процесс(пример telegram.exe)⚡️
