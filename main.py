@@ -1,4 +1,14 @@
-import random,telebot,os,webbrowser,pyautogui,time,requests,socket,requests,re,socket
+import random,
+import telebot
+import os
+import webbrowser
+import pyautogui
+import time
+import requests
+import socket
+import requests
+import re
+import socket
 from PIL import Image, ImageGrab
 from bs4 import BeautifulSoup
 from playsound import playsound
