@@ -1,4 +1,4 @@
-import random,
+import random
 import telebot
 import os
 import webbrowser
