@@ -4,7 +4,6 @@ import os
 import webbrowser
 import pyautogui
 import time
-import requests
 import socket
 import requests
 import re
