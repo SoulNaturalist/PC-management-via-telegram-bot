@@ -92,14 +92,11 @@ def commands(message):
 
 
         elif message.text == '/screen' or message.text == 'Скриншот👀':
-                try:
-                        os.remove("screenshot.png")
-                        bot.send_message(message.chat.id,'Удалил старый скриншот,повторите команду',reply_markup=mainkeyboard)
-                except:
-                        bot.send_message(message.chat.id,'Делаю скриншот')
-                        screen = pyautogui.screenshot('screenshot.png')
-                        screen = open('screenshot.png', 'rb')
-                        bot.send_photo(message.chat.id, screen,reply_markup=mainkeyboard)
+                os.remove("screenshot.png")
+                bot.send_message(message.chat.id,'Делаю скриншот')
+                screen = pyautogui.screenshot('screenshot.png')
+                screen = open('screenshot.png', 'rb')
+                bot.send_photo(message.chat.id, screen,reply_markup=mainkeyboard)
 
         elif message.text == '/process' or message.text == 'Включить приложение✅':
                 bot.send_message(message.chat.id,'Какой процесс хотите запустить(steam.exe)',reply_markup=appkeyboard)
