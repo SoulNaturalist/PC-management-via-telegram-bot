@@ -1,7 +1,8 @@
-pip3 install pyTelegramBotAPI
-pip3 install pyautogui
-pip3 install playsound
-pip3 install beautifulsoup4
-pip3 install Pillow
-pip3 install requests
-pip3 install pynput 
+pip install pyTelegramBotAPI
+pip install pyautogui
+pip install playsound
+pip install beautifulsoup4
+pip install Pillow
+pip install requests
+pip install pynput 
+pip install opencv-python
