@@ -1,5 +1,5 @@
-<p text-align="center"><img src="https://www.flaticon.com/svg/vstatic/svg/555/555526.svg?token=exp=1617903168~hmac=b312441369f947fcaab82bccc9926751" weight="50px" height="50px"></img></p>
-<h2><i>Телеграмм RAT</i></h2>
+<a href="readme/en/README.md"><p text-align="center"><img src="https://www.flaticon.com/svg/vstatic/svg/555/555526.svg?token=exp=1617903168~hmac=b312441369f947fcaab82bccc9926751" weight="50px" height="50px"></img></p>
+<h2><i>Телеграмм RAT</i></h2></a>
 
 <b><p>/open - открыть ссылку в браузере </p></b>
 
