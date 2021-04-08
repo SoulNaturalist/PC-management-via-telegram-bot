@@ -33,3 +33,7 @@
 
 <b><p>/auto - add file to auto-upload</p></b>
 
+<h2>Plans</h2>
+
+<p>/logs - Get passwords and cookies(next update)</p>
+
