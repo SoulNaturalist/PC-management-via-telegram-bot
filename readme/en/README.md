@@ -35,3 +35,6 @@
 
 <b><p>/logs - Get passwords</p></b>
 
+<b><p>Plans</b></p>
+
+<p>Rewrite the bot to the aiogram library</p>
