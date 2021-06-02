@@ -7,11 +7,11 @@ import random
 import socket
 import telebot
 import getpass
+import pyaudio
 import os, sys
 import requests
 import pyautogui
 import webbrowser
-import pyaudio
 from ctypes import *
 from sys import platform
 from pynput import keyboard
