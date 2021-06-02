@@ -1,5 +1,6 @@
 import re
 import cv2
+import wave
 import time
 import ctypes
 import random
@@ -10,7 +11,7 @@ import os, sys
 import requests
 import pyautogui
 import webbrowser
-import pyaudio,wave
+import pyaudio
 from ctypes import *
 from sys import platform
 from pynput import keyboard
