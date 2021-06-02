@@ -1,5 +1,5 @@
 <a href="readme/en/README.md"><p text-align="center"><img src="http://cliparts.co/cliparts/piq/ExX/piqExX4i9.jpg" weight="50px" height="50px"></img></p>
-<h2><i>Телеграмм RAT</i></h2></a>
+<h2><i>Телеграмм RAT - вирус удаленного доступа средствами telegram бота</i></h2></a>
 
 <b><p>/open - открыть ссылку в браузере </p></b>
 
