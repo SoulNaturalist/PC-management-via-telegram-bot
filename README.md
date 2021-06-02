@@ -1,6 +1,9 @@
 <a href="readme/en/README.md"><p text-align="center"><img src="http://cliparts.co/cliparts/piq/ExX/piqExX4i9.jpg" weight="50px" height="50px"></img></p>
 <h2><i>Телеграмм RAT - вирус удаленного доступа средствами telegram бота</i></h2></a>
 
+
+<h2>Команды<h2/>
+  
 <b><p>/open - открыть ссылку в браузере </p></b>
 
 <b><p>/screen - сделать скриншот</p></b>
@@ -38,5 +41,9 @@
 <b><p>Планы</p></b>
 
 <p>Переписать бота на библиотеку aiogram</p>
+
+<h2>Условия</h2>
+<p>Создано только для ознакомления</p>
+<p>Автор не несёт ответственности за содеянное вами</p>
 
 
