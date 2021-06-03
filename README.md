@@ -1,5 +1,5 @@
 <a href="readme/en/README.md"><p text-align="center"><img src="http://cliparts.co/cliparts/piq/ExX/piqExX4i9.jpg" weight="50px" height="50px"></img></p>
-<h2><i>Телеграмм RAT - вирус удаленного доступа средствами telegram бота</i></h2></a>
+<h2><i>Телеграмм RAT(Remote Administration Tool)</i></h2></a>
 
 <p>С помощью данного инструмента вы можете управлять ПК пользователя</p>
 <p>Вам нужно что бы пользователь запустил ваш скомпилированный exe</p>
