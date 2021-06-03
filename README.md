@@ -1,4 +1,4 @@
-<a href="readme/en/README.md"><p text-align="center"><img src="http://cliparts.co/cliparts/piq/ExX/piqExX4i9.jpg" weight="50px" height="50px"></img></p>
+<a href="readme/en/README.md">eng</a>
 <h2><i>Телеграмм RAT(Remote Administration Tool)</i></h2></a>
 
 <p>С помощью данного инструмента вы можете управлять ПК пользователя</p>
