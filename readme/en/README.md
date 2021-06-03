@@ -1,4 +1,4 @@
-<a href="https://github.com/Nilwares/PC-management-via-telegram-bot"><p text-align="center"><img src="https://www.flaticon.com/svg/vstatic/svg/555/555451.svg?token=exp=1617903102~hmac=0b3eb332a6cfbdcf33f0003280321999" weight="50px" height="50px"></img></p>
+<a href="https://github.com/Nilwares/PC-management-via-telegram-bot">ru</a>
 <h2><i>Telegram RAT</i></h2></a>
 
 <b><p>/open - open the link in the browser</p></b>
