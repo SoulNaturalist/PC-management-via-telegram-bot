@@ -1,0 +1,8 @@
+pyTelegramBotAPI
+pyautogui
+playsound
+beautifulsoup4
+Pillow
+requests
+pynput 
+opencv-python

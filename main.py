@@ -69,16 +69,19 @@ bot = telebot.TeleBot(TOKEN)
 
 mainkeyboard = telebot.types.ReplyKeyboardMarkup()
 
-mainkeyboard.add('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴','Скриншот👀','Помощь⚒')
+if LANGUAGE == 'RU':      
+    mainkeyboard.add('Питание🟢','Запись🔊','Браузер🟡','Приложения🟥','ip🈴','Скриншот👀','Помощь⚒') 
 
-powerkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    powerkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 
-powerkeyboard.add('Назад🗿','Выключить пк⚠️','Перезагрузить пк🖥')
+    powerkeyboard.add('Назад🗿','Выключить пк⚠️','Перезагрузить пк🖥')
 
-appkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=3)
+    appkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=3)
 
-appkeyboard.add('Назад🗿','Убить приложение❌','Включить приложение✅')
-
+    appkeyboard.add('Назад🗿','Убить приложение❌','Включить приложение✅')
+else:
+    pass #translate buttons
+    
 @bot.message_handler(content_types=['text'])
 def commands(message):
         if message.text == '/start':
