@@ -9,7 +9,7 @@
 
 <b><p>/tasklist - get a list of all processes</p></b>
 
-<b><p>/process-enable the process(example steam.exe)</p></b>
+<b><p>/process - enable the process(example steam.exe)</p></b>
 
 <b><p>/kill - kill the process(example telegram.exe)</p></b>
 
