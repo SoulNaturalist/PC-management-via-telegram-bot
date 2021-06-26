@@ -5,3 +5,6 @@
 <p>С помощью данного инструмента вы можете управлять ПК пользователя</p>
 
 <p>Вам нужно что бы пользователь запустил ваш упакованный exe</p>
+
+<a href='https://github.com/Nixwares/PC-management-via-telegram-bot/tree/master/readme/en'>Команды</a>
+
