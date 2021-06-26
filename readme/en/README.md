@@ -1,5 +1,5 @@
-<a href="https://github.com/Nilwares/PC-management-via-telegram-bot">ru</a>
-<h2><i>Telegram RAT</i></h2></a>
+
+<h2>Commands</h2>
 
 <b><p>/open - open the link in the browser</p></b>
 
@@ -35,6 +35,4 @@
 
 <b><p>/logs - Get passwords</p></b>
 
-<b><p>Plans</b></p>
-
-<p>Rewrite the bot to the aiogram library</p>
+<a href="https://github.com/Nilwares/PC-management-via-telegram-bot">Back</a>
