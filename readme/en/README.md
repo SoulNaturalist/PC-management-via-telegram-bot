@@ -7,7 +7,7 @@
 
 <b><p>/off - off the pc</p></b>
 
-<b><p>/tasklist-get a list of all processes</p></b>
+<b><p>/tasklist - get a list of all processes</p></b>
 
 <b><p>/process-enable the process(example steam.exe)</p></b>
 
