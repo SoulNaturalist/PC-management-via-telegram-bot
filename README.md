@@ -1,6 +1,8 @@
 <a href="readme/en/README.md">eng</a>
 <h2><i>Телеграмм RAT(Remote Administration Tool)</i></h2></a>
 
+<img src='logo.png'></img>
+
 <p>С помощью данного инструмента вы можете управлять ПК пользователя</p>
 <p>Вам нужно что бы пользователь запустил ваш скомпилированный exe</p>
 
