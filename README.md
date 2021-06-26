@@ -1,6 +1,6 @@
 <h2>Телеграмм RAT(Remote Administration Tool)</h2>
 
-<img src='logo.png'></img>
+<img src='logo telegram.png'></img>
 
 <p>С помощью данного инструмента вы можете управлять ПК пользователя</p>
 
