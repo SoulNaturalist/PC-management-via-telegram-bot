@@ -8,5 +8,5 @@
 
 <a href='https://github.com/Nixwares/PC-management-via-telegram-bot/tree/master/readme/en'>Команды</a>
 
-<h1>Репозиторий больше <b>не поддерживаеться</b>!</h1>
+<p>Репозиторий больше <b>не поддерживаеться</b>!</p>
 
